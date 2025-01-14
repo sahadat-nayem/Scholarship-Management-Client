@@ -1,9 +1,14 @@
+import Banner from "./Banner";
+import Organizations from "./Organizations";
+import ScholarshipManagement from "./ScholarshipManagement";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>Home</h2>
+            <Banner></Banner>
+            <ScholarshipManagement></ScholarshipManagement>
+            <Organizations></Organizations>
         </div>
     );
 };

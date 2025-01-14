@@ -7,26 +7,20 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold">
-        CONTACT us
+        All Scholarship
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold">
-        DASHBOARD
+        User Dashboard
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold" to="/menu">
-        Our Menu
-      </NavLink>
-      <NavLink
-        className="hover:text-yellow-400 font-semibold"
-        to={"/order/salad"}
-      >
-        Our Shop
+        Admin Dashboard
       </NavLink>
     </>
   );
 
   return (
     <>
-      <div className="navbar bg-black text-white bg-opacity-30 fixed w-full z-[100]">
+      <div className="navbar bg-black text-black bg-opacity-20 fixed w-full z-[100]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,13 +46,12 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">BISTRO BOSS</a>
+          <a className="btn btn-ghost text-xl">Our Scholarship</a>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 gap-7">{links}</ul>
         </div>
         <div className="navbar-end gap-3">
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 gap-7">{links}</ul>
-          </div>
-
           {/* <Link to="/dashboard/cart" className="btn relative bg-green-800 rounded-full p-3 text-white lg:mr-5">
           <HiMiniShoppingCart />
             <div className="badge badge-secondary absolute top-0 left-5">+{cart.length}</div>
