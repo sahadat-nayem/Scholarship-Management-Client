@@ -6,7 +6,7 @@ const Navbar = () => {
       <NavLink className="hover:text-yellow-400 font-semibold" to="/">
         Home
       </NavLink>
-      <NavLink className="hover:text-yellow-400 font-semibold">
+      <NavLink className="hover:text-yellow-400 font-semibold" to="/AllScholarship">
         All Scholarship
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>

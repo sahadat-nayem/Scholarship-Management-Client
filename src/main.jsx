@@ -9,6 +9,7 @@ import {
 import Main from './Layout/Main';
 import Home from './pages/Home/Home';
 import ErrorPage from './components/ErrorPage';
+import AllScholarship from './pages/AllScholarship/AllScholarship';
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: 'AllScholarship',
+        element: <AllScholarship></AllScholarship>
       }
     ]
   },
