@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { Helmet } from 'react-helmet-async';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -7,6 +8,9 @@ import 'swiper/css/pagination';
 const CollegeSlider = () => {
     return (
         <div className='p-20 grayscale'>
+            <Helmet>
+                <title>Scholarship Management | Home</title>
+            </Helmet>
              <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
