@@ -8,7 +8,7 @@ const Organizations = () => {
   ];
 
   return (
-    <div className="md:flex mt-20 px-10 grayscale">
+    <div className="md:flex p-10 grayscale mb-14 bg-[#5dade250]">
       <div className="w-4/6">
         <div>
           <h3 className="text-2xl font-semibold md:px-20">

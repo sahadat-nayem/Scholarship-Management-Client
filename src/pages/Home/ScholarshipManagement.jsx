@@ -1,6 +1,6 @@
 const ScholarshipManagement = () => {
   return (
-    <div className="md:flex gap-3 px-10 mt-5 mb-5 items-center">
+    <div className="md:flex gap-3 p-10 mt-5 items-center bg-[#9edabe2e]">
       <div>
         <h3 className="text-4xl mb-3 font-bold">
           <span className="text-red-500">AI enabled</span> all-in-one
