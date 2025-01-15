@@ -4,6 +4,7 @@ const AllScholarshipCart = ({ category }) => {
     scholarshipCategory,
     universityImage,
     applicationDeadline,
+    location,
     subjectName,
     applicationFees,
   } = category;
@@ -19,10 +20,11 @@ const AllScholarshipCart = ({ category }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{universityName}</h2>
-        <p>{scholarshipCategory}</p>
-        <p>{subjectName}</p>
-        <p>{applicationDeadline}</p>
-        <p>{applicationFees}</p>
+        <p>Category : {scholarshipCategory}</p>
+        <p>Subject Name : {subjectName}</p>
+        <p>Country : {location.country}</p>
+        <p>Application Deadline : {applicationDeadline}</p>
+        <p>Application Fee : {applicationFees}</p>
         <div className="card-actions">
           <button className="btn btn-outline text-[#BB8506] bg-gray-200 border border-b-2 w-full">Details</button>
         </div>

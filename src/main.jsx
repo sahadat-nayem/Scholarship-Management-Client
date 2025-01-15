@@ -8,6 +8,9 @@ import Home from "./pages/Home/Home";
 import ErrorPage from "./components/ErrorPage";
 import AllScholarship from "./pages/AllScholarship/AllScholarship";
 import { HelmetProvider } from "react-helmet-async";
+import Login from "./pages/Login";
+import AuthProvider from "./provider/AuthProvider";
+import SignUp from "./pages/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -23,14 +26,24 @@ export const router = createBrowserRouter([
         path: "AllScholarship",
         element: <AllScholarship></AllScholarship>,
       },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'signup',
+        element: <SignUp></SignUp>
+      }
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <AuthProvider>
     <HelmetProvider>
       <RouterProvider router={router} />
     </HelmetProvider>
+    </AuthProvider>
   </StrictMode>
 );

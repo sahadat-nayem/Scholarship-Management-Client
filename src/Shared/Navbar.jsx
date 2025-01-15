@@ -1,12 +1,30 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import userIcon from "../assets/user-removebg-preview.png";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    signOutUser()
+      .then(() => {
+        // console.log("Logged Out");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const links = (
     <>
       <NavLink className="hover:text-yellow-400 font-semibold" to="/">
         Home
       </NavLink>
-      <NavLink className="hover:text-yellow-400 font-semibold" to="/AllScholarship">
+      <NavLink
+        className="hover:text-yellow-400 font-semibold"
+        to="/AllScholarship"
+      >
         All Scholarship
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold">
@@ -55,31 +73,10 @@ const Navbar = () => {
           {/* <Link to="/dashboard/cart" className="btn relative bg-green-800 rounded-full p-3 text-white lg:mr-5">
           <HiMiniShoppingCart />
             <div className="badge badge-secondary absolute top-0 left-5">+{cart.length}</div>
-          </Link>
-          {user && user?.email ? (
-            <button
-              onClick={logOut}
-              className="hover:text-yellow-400 font-semibold"
-            >
-              Log Out
-            </button>
-          ) : (
-            <NavLink
-              to="/login"
-              className="hover:text-yellow-400 font-semibold pr-5"
-            >
-              Login
-            </NavLink>
-          )} */}
-          <NavLink
-            to="/login"
-            className="hover:text-yellow-400 font-semibold pr-5"
-          >
-            Login
-          </NavLink>
-          {/* <div className="">
+          </Link> */}
+          <div className="">
             {user && user?.email ? (
-              <div className="group relative lg:hidden">
+              <div className="group relative">
                 <img
                   className="size-12 rounded-full  border-2 to-blue-900"
                   src={user?.photoURL}
@@ -94,7 +91,22 @@ const Navbar = () => {
                 <img className="size-10" src={userIcon} />
               </div>
             )}
-          </div> */}
+          </div>
+          {user && user?.email ? (
+            <button
+              onClick={handleLogOut}
+              className="hover:text-yellow-400 font-semibold"
+            >
+              Log Out
+            </button>
+          ) : (
+            <NavLink
+              to="/login"
+              className="hover:text-yellow-400 font-semibold pr-5"
+            >
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </>
