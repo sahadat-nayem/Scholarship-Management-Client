@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import userIcon from "../assets/user-removebg-preview.png";
+import useApply from "../hooks/useApply";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  const [apply] = useApply();
 
   const handleLogOut = () => {
     signOutUser()
@@ -27,7 +29,7 @@ const Navbar = () => {
       >
         All Scholarship
       </NavLink>
-      <NavLink className="hover:text-yellow-400 font-semibold">
+      <NavLink className="hover:text-yellow-400 font-semibold" to="/dashboard/myApply">
         User Dashboard
       </NavLink>
       <NavLink className="hover:text-yellow-400 font-semibold" to="/menu">

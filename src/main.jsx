@@ -13,6 +13,12 @@ import AuthProvider from "./provider/AuthProvider";
 import SignUp from "./pages/SignUp";
 import ScholarshipDetails from "./pages/ScholarshipDetails";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Dashboard from "./Layout/Dashboard";
+import MyApplication from "./pages/Dashboard/MyApplication";
+
+const queryClient = new QueryClient();
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -30,26 +36,39 @@ export const router = createBrowserRouter([
       {
         path: "scholarshipDetails/:id",
         element: <ScholarshipDetails></ScholarshipDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/scholarship/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/scholarship/${params.id}`),
       },
       {
-        path: 'login',
-        element: <Login></Login>
+        path: "login",
+        element: <Login></Login>,
       },
       {
-        path: 'signup',
-        element: <SignUp></SignUp>
-      }
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
     ],
   },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children:[
+      {
+        path: 'myApply',
+        element: <MyApplication></MyApplication>
+      }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </QueryClientProvider>
     </AuthProvider>
   </StrictMode>
 );
