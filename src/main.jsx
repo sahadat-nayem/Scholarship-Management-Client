@@ -11,6 +11,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Login from "./pages/Login";
 import AuthProvider from "./provider/AuthProvider";
 import SignUp from "./pages/SignUp";
+import ScholarshipDetails from "./pages/ScholarshipDetails";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ export const router = createBrowserRouter([
       {
         path: "AllScholarship",
         element: <AllScholarship></AllScholarship>,
+      },
+      {
+        path: "scholarshipDetails/:id",
+        element: <ScholarshipDetails></ScholarshipDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/scholarship/${params.id}`)
       },
       {
         path: 'login',
