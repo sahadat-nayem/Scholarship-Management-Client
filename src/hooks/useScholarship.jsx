@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
+import useAxiosPublic from "./useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 
 const useScholarship = () => {
-    const [scholarship, setScholarship] = useState([]);
-    const [loading, setLoading] = useState(true);
-    
-        useEffect(() => {
-            fetch('http://localhost:5000/scholarship')
-                .then(res => res.json())
-                .then(data => {
-                    setScholarship(data);
-                    setLoading(false);
-                })
-        }, [])
-        return [scholarship, loading]
+    const axiosPublic = useAxiosPublic();
+    const {
+        data: scholarship = [],
+        isPending: loading,
+        refetch,
+      } = useQuery({
+        queryKey: ["scholarship"],
+        queryFn: async () => {
+          const res = await axiosPublic.get("/scholarship");
+          return res.data;
+        },
+      });
+        return [scholarship, loading, refetch]
 };
 
 export default useScholarship;
