@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import userIcon from "../assets/user-removebg-preview.png";
-import useApply from "../hooks/useApply";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
-  const [apply] = useApply();
+  const [isAdmin] = useAdmin();
 
   const handleLogOut = () => {
     signOutUser()
@@ -29,12 +29,25 @@ const Navbar = () => {
       >
         All Scholarship
       </NavLink>
-      <NavLink className="hover:text-yellow-400 font-semibold" to="/dashboard/myApply">
-        User Dashboard
-      </NavLink>
-      <NavLink className="hover:text-yellow-400 font-semibold" to="/menu">
-        Admin Dashboard
-      </NavLink>
+      {isAdmin ? (
+        <>
+          <NavLink
+            className="hover:text-yellow-400 font-semibold"
+            to="/dashboard/myApply"
+          >
+            Admin Dashboard
+          </NavLink>
+        </>
+      ) : (
+        <>
+          <NavLink
+            className="hover:text-yellow-400 font-semibold"
+            to="/dashboard/myApply"
+          >
+            User Dashboard
+          </NavLink>
+        </>
+      )}
     </>
   );
 

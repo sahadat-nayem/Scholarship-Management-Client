@@ -1,30 +1,36 @@
 import { FaHome, FaSearch } from "react-icons/fa";
-import { MdReviews } from "react-icons/md";
+import { MdRateReview, MdReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
+import { FaBook, FaList, FaUsers } from "react-icons/fa6";
+import { IoSchoolSharp } from "react-icons/io5";
 
 
 const Dashboard = () => {
+
+  const [isAdmin] = useAdmin();
+
     return (
         <div className="flex">
       {/* dashboard side bar */}
       <div className="w-64 min-h-screen bg-[#9edabeae]">
         <ul className="menu p-4">
-          {/* {isAdmin ? (
-            <> */}
-              {/* <li>
-                <NavLink to="/dashboard/adminHome">
+          {isAdmin ? (
+            <>
+              <li>
+                <NavLink to="/dashboard/adminProfile">
                   <FaHome></FaHome>
                   Admin Profile
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/addItems">
-                  <FaUtensils></FaUtensils>
+                <NavLink to="/dashboard/addScholarship">
+                <IoSchoolSharp />
                   Add Scholarship
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageItems">
+                <NavLink to="/dashboard/manageScholarship">
                   <FaList></FaList>
                   Manage Scholarship.
                 </NavLink>
@@ -36,40 +42,40 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/users">
+                <NavLink to="/dashboard/manageUsers">
                   <FaUsers></FaUsers>
                   Manage Users.
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/users">
-                  <FaUsers></FaUsers>
+                <NavLink to="/dashboard/manageReview">
+                <MdRateReview />
                   Manage Review
                 </NavLink>
               </li>
             </>
-          ) : ( */}
+          ) : (
             <>
               <li>
-                <NavLink to="/dashboard/userHome">
+                <NavLink to="/dashboard/myProfile">
                   <FaHome></FaHome>
                   My Profile
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/paymentHistory">
+                <NavLink to="/dashboard/myApplication">
                 {/* <IoWallet></IoWallet> */}
                 My Application
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/review">
+                <NavLink to="/dashboard/myReview">
                 <MdReviews />
                   My reviews
                 </NavLink>
               </li>
             </>
-          {/* )} */}
+          )}
           {/* shared nav links */}
           <div className="divider"></div>
           <li>

@@ -15,7 +15,11 @@ import ScholarshipDetails from "./pages/ScholarshipDetails";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Dashboard from "./Layout/Dashboard";
-import MyApplication from "./pages/Dashboard/MyApplication";
+import MyProfile from "./pages/Dashboard/UserDashboard/MyProfile";
+import MyApplication from "./pages/Dashboard/UserDashboard/MyApplication";
+import AddScholarship from "./pages/Dashboard/AdminDashboard/AddScholarship";
+import AdminRoute from "./routes/AdminRoute";
+import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 
 const queryClient = new QueryClient();
 
@@ -53,9 +57,23 @@ export const router = createBrowserRouter([
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children:[
+      // admin routes
+      {
+        path: 'addScholarship',
+        element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
+      },
+      {
+        path: 'user',
+        element: <ManageUsers></ManageUsers>
+      },
+      // normal users routes
       {
         path: 'myApply',
         element: <MyApplication></MyApplication>
+      },
+      {
+        path: 'myProfile',
+        element: <MyProfile></MyProfile>
       }
     ]
   }
