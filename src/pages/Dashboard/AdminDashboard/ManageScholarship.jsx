@@ -75,14 +75,14 @@ const ManageScholarship = () => {
                   </Link>
                 </td>
                 <td>
-                  {/* <Link to={`/dashboard/updateItem/${item._id}`}> */}
+                  <Link to={`/dashboard/updateScholarship/${item._id}`}>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
                       <FaEdit
                         className="text-black 
                                         "
                       ></FaEdit>
                     </button>
-                  {/* </Link> */}
+                  </Link>
                 </td>
                 <td>
                   <button

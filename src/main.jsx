@@ -21,6 +21,7 @@ import AddScholarship from "./pages/Dashboard/AdminDashboard/AddScholarship";
 import AdminRoute from "./routes/AdminRoute";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageScholarship from "./pages/Dashboard/AdminDashboard/ManageScholarship";
+import UpdateScholarship from "./pages/Dashboard/AdminDashboard/UpdateScholarship";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,11 @@ export const router = createBrowserRouter([
       {
         path: 'addScholarship',
         element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
+      },
+      {
+        path: 'updateScholarship/:id',
+        element: <AdminRoute><UpdateScholarship></UpdateScholarship></AdminRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/scholarship/${params.id}`)
       },
       {
         path: 'manageScholarship',
