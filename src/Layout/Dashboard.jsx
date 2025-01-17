@@ -1,4 +1,4 @@
-import { FaHome, FaSearch } from "react-icons/fa";
+import { FaHome, FaSearch, FaUser } from "react-icons/fa";
 import { MdRateReview, MdReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
@@ -19,7 +19,7 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/adminProfile">
-                  <FaHome></FaHome>
+                <FaUser />
                   Admin Profile
                 </NavLink>
               </li>
@@ -58,7 +58,7 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/myProfile">
-                  <FaHome></FaHome>
+                <FaUser />
                   My Profile
                 </NavLink>
               </li>
