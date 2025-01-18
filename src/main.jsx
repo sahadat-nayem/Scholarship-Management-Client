@@ -23,6 +23,8 @@ import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageScholarship from "./pages/Dashboard/AdminDashboard/ManageScholarship";
 import UpdateScholarship from "./pages/Dashboard/AdminDashboard/UpdateScholarship";
 import ManageApplied from "./pages/Dashboard/AdminDashboard/ManageApplied";
+import AdminProfile from "./pages/Dashboard/AdminDashboard/AdminProfile";
+import ManageReview from "./pages/Dashboard/AdminDashboard/ManageReview";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,10 @@ export const router = createBrowserRouter([
     children:[
       // admin routes
       {
+        path: 'adminProfile',
+        element: <AdminProfile></AdminProfile>
+      },
+      {
         path: 'addScholarship',
         element: <AdminRoute><AddScholarship></AddScholarship></AdminRoute>
       },
@@ -81,6 +87,10 @@ export const router = createBrowserRouter([
       {
         path: 'user',
         element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: 'manageReview',
+        element: <ManageReview></ManageReview>
       },
       // normal users routes
       {

@@ -81,14 +81,12 @@ const ManageApplied = () => {
                   <td className="text-right">${item.applicationFees}</td>
                   <td className="text-right">{item.email}</td>
                   <td>
-                  <Link to={`/scholarshipDetails/${item._id}`}>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
                       <BiSolidMessageAltDetail
                         className="text-black 
                                         "
                       ></BiSolidMessageAltDetail>
                     </button>
-                  </Link>
                   </td>
                   <td>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
