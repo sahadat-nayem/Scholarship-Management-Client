@@ -22,6 +22,7 @@ import AdminRoute from "./routes/AdminRoute";
 import ManageUsers from "./pages/Dashboard/AdminDashboard/ManageUsers";
 import ManageScholarship from "./pages/Dashboard/AdminDashboard/ManageScholarship";
 import UpdateScholarship from "./pages/Dashboard/AdminDashboard/UpdateScholarship";
+import ManageApplied from "./pages/Dashboard/AdminDashboard/ManageApplied";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
       {
         path: 'manageScholarship',
         element: <AdminRoute><ManageScholarship></ManageScholarship></AdminRoute>
+      },
+      {
+        path: 'manageApplied',
+        element: <AdminRoute><ManageApplied></ManageApplied></AdminRoute>
       },
       {
         path: 'user',
