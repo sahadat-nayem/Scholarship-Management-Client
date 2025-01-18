@@ -103,7 +103,7 @@ const UpdateScholarship = () => {
                 <span className="label-text">Application Fees</span>
               </label>
               <input
-                type="number"
+                type="text"
                 defaultValue={applicationFees}
                 placeholder="Application Fees"
                 {...register("applicationFees", { required: true })}
