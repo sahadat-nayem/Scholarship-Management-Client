@@ -26,6 +26,8 @@ import ManageApplied from "./pages/Dashboard/AdminDashboard/ManageApplied";
 import AdminProfile from "./pages/Dashboard/AdminDashboard/AdminProfile";
 import ManageReview from "./pages/Dashboard/AdminDashboard/ManageReview";
 import Payment from "./pages/Dashboard/UserDashboard/Payment/Payment";
+import MyReviews from "./pages/Dashboard/UserDashboard/Myreviews";
+import PrivateRoutes from "./routes/PrivateRoutes";
 
 const queryClient = new QueryClient();
 
@@ -38,14 +40,15 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/scholarship/new')
       },
       {
         path: "AllScholarship",
-        element: <AllScholarship></AllScholarship>,
+        element: <PrivateRoutes><AllScholarship></AllScholarship></PrivateRoutes>,
       },
       {
         path: "scholarshipDetails/:id",
-        element: <ScholarshipDetails></ScholarshipDetails>,
+        element: <PrivateRoutes><ScholarshipDetails></ScholarshipDetails></PrivateRoutes>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/scholarship/${params.id}`),
       },
@@ -96,11 +99,15 @@ export const router = createBrowserRouter([
       // normal users routes
       {
         path: 'myApplication',
-        element: <MyApplication></MyApplication>
+        element: <PrivateRoutes><MyApplication></MyApplication></PrivateRoutes>
       },
       {
         path: 'myProfile',
-        element: <MyProfile></MyProfile>
+        element: <PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>
+      },
+      {
+        path: 'myReview',
+        element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
       },
       {
         path: 'payment',
