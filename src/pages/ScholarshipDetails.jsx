@@ -1,4 +1,9 @@
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
@@ -24,7 +29,7 @@ const ScholarshipDetails = () => {
   const navigate = useNavigate();
   const locations = useLocation();
   const axiosSecure = useAxiosSecure();
-  const [, refetch] = useApply();
+  const [apply, refetch] = useApply();
 
   const handleApply = () => {
     if (user && user.email) {
@@ -34,6 +39,9 @@ const ScholarshipDetails = () => {
         menuId: _id,
         email: user.email,
         universityName,
+        location,
+        scholarshipCategory,
+        serviceCharge,
         universityImage,
         applicationFees,
       };
@@ -87,9 +95,19 @@ const ScholarshipDetails = () => {
         <p>Post Date : {postDate}</p>
         <p>Application Fees : {applicationFees}</p>
         <div className="card-actions">
-          <button onClick={handleApply} className="btn btn-info md:w-96">
+          {apply.length ? (
+            <button disabled className="btn btn-info md:w-96">
             Apply
           </button>
+          ) : (
+            <Link
+              to="/dashboard/payment"
+              onClick={handleApply}
+              className="btn btn-info md:w-96"
+            >
+              Apply
+            </Link>
+          )}
         </div>
       </div>
     </div>

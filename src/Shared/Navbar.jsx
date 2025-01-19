@@ -33,7 +33,7 @@ const Navbar = () => {
         <>
           <NavLink
             className="hover:text-yellow-400 font-semibold"
-            to="/dashboard/myApply"
+            to="/dashboard/addScholarship"
           >
             Admin Dashboard
           </NavLink>
@@ -42,7 +42,7 @@ const Navbar = () => {
         <>
           <NavLink
             className="hover:text-yellow-400 font-semibold"
-            to="/dashboard/myApply"
+            to="/dashboard/myApplication"
           >
             User Dashboard
           </NavLink>

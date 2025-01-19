@@ -2,7 +2,7 @@ import { FaHome, FaSearch, FaUser } from "react-icons/fa";
 import { MdRateReview, MdReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
-import { FaBook, FaList, FaUsers } from "react-icons/fa6";
+import { FaBook, FaFileLines, FaList, FaUsers } from "react-icons/fa6";
 import { IoSchoolSharp } from "react-icons/io5";
 
 
@@ -64,7 +64,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/myApplication">
-                {/* <IoWallet></IoWallet> */}
+                <FaFileLines />
                 My Application
                 </NavLink>
               </li>

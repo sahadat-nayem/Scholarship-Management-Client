@@ -3,7 +3,6 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdFeedback } from "react-icons/md";
 import { BiSolidMessageAltDetail } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import useApply from "../../../hooks/useApply";
 
 const ManageApplied = () => {

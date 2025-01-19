@@ -20,7 +20,7 @@ const ManageScholarship = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await axiosSecure.delete(`/scholarship/${item._id}`);
+        const res = await axiosSecure.delete(`/manageScholarship/${item._id}`);
         // console.log(res.data);
         if (res.data.deletedCount > 0) {
           // refetch to update the ui

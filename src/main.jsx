@@ -25,6 +25,7 @@ import UpdateScholarship from "./pages/Dashboard/AdminDashboard/UpdateScholarshi
 import ManageApplied from "./pages/Dashboard/AdminDashboard/ManageApplied";
 import AdminProfile from "./pages/Dashboard/AdminDashboard/AdminProfile";
 import ManageReview from "./pages/Dashboard/AdminDashboard/ManageReview";
+import Payment from "./pages/Dashboard/UserDashboard/Payment/Payment";
 
 const queryClient = new QueryClient();
 
@@ -94,12 +95,16 @@ export const router = createBrowserRouter([
       },
       // normal users routes
       {
-        path: 'myApply',
+        path: 'myApplication',
         element: <MyApplication></MyApplication>
       },
       {
         path: 'myProfile',
         element: <MyProfile></MyProfile>
+      },
+      {
+        path: 'payment',
+        element: <Payment></Payment>
       }
     ]
   }

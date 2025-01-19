@@ -68,7 +68,7 @@ const SignUp = () => {
           <div className="text-center md:w-1/2 lg:text-left">
           <Lottie animationData={loginLottieData}></Lottie>
           </div>
-          <div className="card md:w-1/2 max-w-sm shadow-2xl">
+          <div className="card md:w-1/2 max-w-sm">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
