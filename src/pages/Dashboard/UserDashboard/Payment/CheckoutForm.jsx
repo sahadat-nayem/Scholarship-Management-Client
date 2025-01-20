@@ -26,6 +26,7 @@ const CheckoutForm = () => {
           .then((res) => {
             console.log(res.data.clientSecret);
             setClientSecret(res.data.clientSecret);
+            console.log("Client Secret:", clientSecret);
           });
       }
     }, [axiosSecure, totalPrice]);
@@ -56,52 +57,52 @@ const CheckoutForm = () => {
         setError("");
       }
   
-    //   // confirm payment
-    //   const { paymentIntent, error: confirmError } =
-    //     await stripe.confirmCardPayment(clientSecret, {
-    //       payment_method: {
-    //         card: card,
-    //         billing_details: {
-    //           email: user?.email || "anonymous",
-    //           name: user?.displayName || "anonymous",
-    //         },
-    //       },
-    //     });
+      // confirm payment
+      const { paymentIntent, error: confirmError } =
+        await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: card,
+            billing_details: {
+              email: user?.email || "anonymous",
+              name: user?.displayName || "anonymous",
+            },
+          },
+        });
   
-    //   if (confirmError) {
-    //     console.log("confirm error");
-    //   } else {
-    //     console.log("payment intent", paymentIntent);
-    //     if (paymentIntent.status === "succeeded") {
-    //       console.log("transaction id", paymentIntent.id);
-    //       setTransactionId(paymentIntent.id);
+      if (confirmError) {
+        console.log("confirm error");
+      } else {
+        console.log("payment intent", paymentIntent);
+        if (paymentIntent.status === "succeeded") {
+          console.log("transaction id", paymentIntent.id);
+          setTransactionId(paymentIntent.id);
   
-    //       // now save the payment in the database
-    //       const payment = {
-    //         email: user.email,
-    //         price: totalPrice,
-    //         transactionId: paymentIntent.id,
-    //         date: new Date(), // utc date convert. use moment js to
-    //         cartIds: cart.map((item) => item._id),
-    //         menuItemIds: cart.map((item) => item.menuId),
-    //         status: "pending",
-    //       };
+          // now save the payment in the database
+          const payment = {
+            email: user.email,
+            price: totalPrice,
+            transactionId: paymentIntent.id,
+            date: new Date(), // utc date convert. use moment js to
+            cartIds: cart.map((item) => item._id),
+            menuItemIds: cart.map((item) => item.menuId),
+            status: "pending",
+          };
   
-    //       const res = await axiosSecure.post("/payments", payment);
-    //       console.log("payment saved", res.data);
-    //       refetch();
-    //       if (res.data?.paymentResult?.insertedId) {
-    //         Swal.fire({
-    //           position: "top-end",
-    //           icon: "success",
-    //           title: "Thank you for the taka paisa",
-    //           showConfirmButton: false,
-    //           timer: 1500,
-    //         });
-    //         navigate("/dashboard/paymentHistory");
-    //       }
-    //     }
-    //   }
+          const res = await axiosSecure.post("/payments", payment);
+          console.log("payment saved", res.data);
+          refetch();
+          if (res.data?.paymentResult?.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Thank you for the taka paisa",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/dashboard/paymentHistory");
+          }
+        }
+      }
     };
 
     return (

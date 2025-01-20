@@ -22,7 +22,7 @@ const UpdateScholarship = () => {
     
 
     try {
-      const scholarshipRes = await axiosSecure.patch(`/scholarship/${_id}`, scholarshipItem);
+      const scholarshipRes = await axiosSecure.patch(`/scholarship/update/${_id}`, scholarshipItem);
       console.log(_id);
       
       if (scholarshipRes.data.modifiedCount > 0) {

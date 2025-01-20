@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
         path: "scholarshipDetails/:id",
         element: <PrivateRoutes><ScholarshipDetails></ScholarshipDetails></PrivateRoutes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/scholarship/${params.id}`),
+          fetch(`http://localhost:5000/scholarship/details/${params.id}`),
       },
       {
         path: "login",
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateScholarship/:id',
         element: <AdminRoute><UpdateScholarship></UpdateScholarship></AdminRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/scholarship/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/scholarship/update/${params.id}`)
       },
       {
         path: 'manageScholarship',

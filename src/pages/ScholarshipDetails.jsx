@@ -8,6 +8,7 @@ import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useApply from "../hooks/useApply";
+import useAdmin from "../hooks/useAdmin";
 
 const ScholarshipDetails = () => {
   const {
@@ -29,6 +30,7 @@ const ScholarshipDetails = () => {
   const navigate = useNavigate();
   const locations = useLocation();
   const axiosSecure = useAxiosSecure();
+  const [isAdmin] = useAdmin();
   const [apply, refetch] = useApply();
 
   const handleApply = () => {
@@ -95,18 +97,28 @@ const ScholarshipDetails = () => {
         <p>Post Date : {postDate}</p>
         <p>Application Fees : {applicationFees}</p>
         <div className="card-actions">
-          {apply.length ? (
-            <button disabled className="btn btn-info md:w-96">
-            Apply
-          </button>
+          {isAdmin ? (
+            <>
+              <button onClick={handleApply} className="btn btn-info md:w-96">
+                Apply
+              </button>
+            </>
           ) : (
-            <Link
-              to="/dashboard/payment"
-              onClick={handleApply}
-              className="btn btn-info md:w-96"
-            >
-              Apply
-            </Link>
+            <>
+              {apply.length ? (
+                <button disabled className="btn btn-info md:w-96">
+                  Apply
+                </button>
+              ) : (
+                <Link
+                  to="/dashboard/payment"
+                  onClick={handleApply}
+                  className="btn btn-info md:w-96"
+                >
+                  Apply
+                </Link>
+              )}
+            </>
           )}
         </div>
       </div>
