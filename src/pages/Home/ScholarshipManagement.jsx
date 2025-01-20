@@ -1,10 +1,17 @@
+import { useTypewriter } from "react-simple-typewriter";
+
 const ScholarshipManagement = () => {
+
+  const [text] = useTypewriter({
+    words: ['AI enabled all-in-one Scholarship Management Software for scholarship providers'],
+    loop: 0
+  })
+
   return (
     <div className="md:flex gap-3 p-10 mt-5 items-center bg-[#9edabe2e]">
       <div>
         <h3 className="text-4xl mb-3 font-bold">
-          <span className="text-red-500">AI enabled</span> all-in-one
-          Scholarship Management Software for scholarship providers
+          {text}
         </h3>
         <p>
           Create a smooth-running scholarship application process with

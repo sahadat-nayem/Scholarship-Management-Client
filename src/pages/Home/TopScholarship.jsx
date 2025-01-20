@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const TopScholarship = ({ category }) => {
   const {
@@ -14,7 +18,7 @@ const TopScholarship = ({ category }) => {
 
 
   return (
-    <div className="card bg-base-100 w-96 border rounded-none hover:rounded-xl border-black hover:shadow-2xl mb-5">
+    <div className="card bg-base-100 w-96 border rounded-md hover:rounded-xl border-black hover:shadow-2xl mb-5" data-aos="fade-right">
       <figure className="px-10 pt-10">
         <img
           src={universityImage}

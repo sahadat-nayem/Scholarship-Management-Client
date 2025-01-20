@@ -7,6 +7,7 @@ const Organizations = () => {
     { label: "Awarded", value: 428235232 },
   ];
 
+
   return (
     <div className="md:flex p-10 grayscale mb-14 bg-[#5dade250]">
       <div className="w-4/6">
