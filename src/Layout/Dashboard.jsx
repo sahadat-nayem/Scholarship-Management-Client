@@ -4,6 +4,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import { FaBook, FaFileLines, FaList, FaUsers } from "react-icons/fa6";
 import { IoSchoolSharp } from "react-icons/io5";
+import { IoMdAnalytics } from "react-icons/io";
 
 
 const Dashboard = () => {
@@ -51,6 +52,12 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/manageReview">
                 <MdRateReview />
                   Manage Review
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/analytics">
+                <IoMdAnalytics />
+                Analytics Dashboard
                 </NavLink>
               </li>
             </>

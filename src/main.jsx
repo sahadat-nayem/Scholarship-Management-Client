@@ -28,6 +28,7 @@ import ManageReview from "./pages/Dashboard/AdminDashboard/ManageReview";
 import Payment from "./pages/Dashboard/UserDashboard/Payment/Payment";
 import MyReviews from "./pages/Dashboard/UserDashboard/Myreviews";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import AnalyticsChart from "./pages/Dashboard/AdminDashboard/AnalyticsChart";
 
 const queryClient = new QueryClient();
 
@@ -95,6 +96,10 @@ export const router = createBrowserRouter([
       {
         path: 'manageReview',
         element: <ManageReview></ManageReview>
+      },
+      {
+        path: 'analytics',
+        element: <AdminRoute><AnalyticsChart></AnalyticsChart></AdminRoute>
       },
       // normal users routes
       {

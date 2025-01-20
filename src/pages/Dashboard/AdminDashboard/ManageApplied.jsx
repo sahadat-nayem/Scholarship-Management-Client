@@ -3,11 +3,27 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdFeedback } from "react-icons/md";
 import { BiSolidMessageAltDetail } from "react-icons/bi";
-import useApply from "../../../hooks/useApply";
+import { useEffect, useState } from "react";
 
 const ManageApplied = () => {
-  const [apply, , refetch] = useApply();
+  const [apply, setApply] = useState([]);
+  const [sortType, setSortType] = useState("");
   const axiosSecure = useAxiosSecure();
+
+  const fetchApplications = async (sortBy = "") => {
+    const res = await axiosSecure.get(`/apply?sortBy=${sortBy}`);
+    setApply(res.data);
+  };
+
+  useEffect(() => {
+    fetchApplications();
+  }, []);
+
+  const handleSortChange = async (e) => {
+    const value = e.target.value;
+    setSortType(value);
+    fetchApplications(value);
+  };
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -21,10 +37,8 @@ const ManageApplied = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/apply/${item._id}`);
-        // console.log(res.data);
         if (res.data.deletedCount > 0) {
-          // refetch to update the ui
-          refetch();
+          setApply(apply.filter((a) => a._id !== item._id));
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -41,13 +55,23 @@ const ManageApplied = () => {
     <div>
       <div className="mx-auto text-center md:w-4/12 my-8">
         <h3 className="text-3xl uppercase border-y-4 py-4">
-          All applied Scholarship
+          All Applied Scholarships
         </h3>
+      </div>
+      <div className="text-center my-4">
+        <select
+          className="border border-purple-500 p-2 rounded"
+          value={sortType}
+          onChange={handleSortChange}
+        >
+          <option value="">Sort By All Applied Scholarships</option>
+          <option value="appliedDate">Applied Date</option>
+          <option value="applicationDeadline">Scholarship Deadline</option>
+        </select>
       </div>
       <div>
         <div className="overflow-x-auto">
           <table className="table w-full">
-            {/* head */}
             <thead>
               <tr>
                 <th>#</th>
@@ -81,18 +105,12 @@ const ManageApplied = () => {
                   <td className="text-right">{item.email}</td>
                   <td>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
-                      <BiSolidMessageAltDetail
-                        className="text-black 
-                                        "
-                      ></BiSolidMessageAltDetail>
+                      <BiSolidMessageAltDetail className="text-black"></BiSolidMessageAltDetail>
                     </button>
                   </td>
                   <td>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
-                      <MdFeedback
-                        className="text-black 
-                                        "
-                      ></MdFeedback>
+                      <MdFeedback className="text-black"></MdFeedback>
                     </button>
                   </td>
                   <td>
