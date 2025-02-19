@@ -56,7 +56,7 @@ const Login = () => {
       <Helmet>
         <title>Bistro | Sign In</title>
       </Helmet>
-      <div className="min-h-screen flex justify-center items-center mt-10 gap-5">
+      <div className="min-h-screen flex justify-center items-center mt-10 gap-5 bg-white">
             <div className="text-center lg:text-right w-96">
                 <Lottie animationData={loginLottieData}></Lottie>
             </div>

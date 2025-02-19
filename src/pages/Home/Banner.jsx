@@ -5,22 +5,19 @@ const Banner = () => {
     return (
         <Carousel>
                 <div>
-                    <img src="https://i.ibb.co.com/q7wbHRX/1712898622176.jpg" />
+                    <img src="https://i.ibb.co.com/99pv7drg/education-scholarship-web-banner-design-free-vector.jpg"/>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co.com/Ks8FgJ6/Automate-workflows.png" />
+                    <img src="https://i.ibb.co.com/JF8rpTtY/student-loan-program-web-banner-design-students-do-the-student-exchange-signatures-on-unrolled-stude.jpg"/>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co.com/0GVv0QP/monitor-impact.png" />
+                    <img src="https://i.ibb.co.com/21XvZtRp/images.jpg"/>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co.com/0GVv0QP/monitor-impact.png" />
+                    <img src="https://i.ibb.co.com/x8Xfrz4X/images-2.jpg"/>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co.com/8rVNGP2/Fellowship-Management.png" />
-                </div>
-                <div>
-                    <img src="https://i.ibb.co.com/f9tSJ8K/design-of-students-take-money-in-trophy-outstanding-students-receive-scholarship-support-for-tuition.jpg" />
+                    <img src="https://i.ibb.co.com/cKD1b0Nq/images-1.jpg"/>
                 </div>
         </Carousel>
     );

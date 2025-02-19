@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 
 const CollegeSlider = () => {
   return (
-    <div className="p-20 grayscale">
+    <div className="p-20">
       <Helmet>
         <title>Scholarship Management | Home</title>
       </Helmet>

@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import userIcon from "../assets/user-removebg-preview.png";
 import useAdmin from "../hooks/useAdmin";
+import { FaHome, FaUser } from "react-icons/fa";
+import { FaGoogleScholar } from "react-icons/fa6";
+import { RiAdminFill } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -20,31 +23,31 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink className="hover:text-yellow-400 font-semibold" to="/">
-        Home
+      <NavLink className="flex gap-1 hover:text-yellow-400 font-semibold" to="/">
+      <FaHome className="size-4" /> Home
       </NavLink>
       <NavLink
-        className="hover:text-yellow-400 font-semibold"
+        className="flex gap-1 hover:text-yellow-400 font-semibold"
         to="/AllScholarship"
       >
-        All Scholarship
+        <FaGoogleScholar className="size-4" /> All Scholarship
       </NavLink>
       {isAdmin ? (
         <>
           <NavLink
-            className="hover:text-yellow-400 font-semibold"
+            className="flex gap-1 hover:text-yellow-400 font-semibold"
             to="/dashboard/addScholarship"
           >
-            Admin Dashboard
+            <RiAdminFill className="size-4" /> Admin Dashboard
           </NavLink>
         </>
       ) : (
         <>
           <NavLink
-            className="hover:text-yellow-400 font-semibold"
+            className="flex gap-1 hover:text-yellow-400 font-semibold"
             to="/dashboard/myApplication"
           >
-            User Dashboard
+            <FaUser className="size-4" /> User Dashboard
           </NavLink>
         </>
       )}
@@ -93,11 +96,11 @@ const Navbar = () => {
             {user && user?.email ? (
               <div className="group relative">
                 <img
-                  className="size-12 rounded-full  border-2 to-blue-900"
+                  className="size-12 rounded-full border-2 border-blue-900 transition-all duration-300"
                   src={user?.photoURL}
                   alt=""
                 />
-                <span className="absolute bottom-0 left-0 right-0 font-semibold bg-gray-100 text-black text-center opacity-0 group-hover:opacity-100  ">
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded font-semibold text-black text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20">
                   {user?.displayName}
                 </span>
               </div>
