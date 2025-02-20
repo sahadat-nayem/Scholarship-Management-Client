@@ -99,21 +99,21 @@ const ScholarshipDetails = () => {
         <div className="card-actions">
           {isAdmin ? (
             <>
-              <button onClick={handleApply} className="btn btn-info md:w-96">
+              <button onClick={handleApply} className="btn btn-outline glass bg-black text-white  md:w-96">
                 Apply
               </button>
             </>
           ) : (
             <>
               {apply.length ? (
-                <button disabled className="btn btn-info md:w-96">
+                <button disabled className="btn btn-outline glass bg-black text-white md:w-96">
                   Apply
                 </button>
               ) : (
                 <Link
                   to="/dashboard/payment"
                   onClick={handleApply}
-                  className="btn btn-info md:w-96"
+                  className="btn btn-outline glass bg-black text-white md:w-96"
                 >
                   Apply
                 </Link>

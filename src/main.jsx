@@ -24,9 +24,7 @@ import ManageScholarship from "./pages/Dashboard/AdminDashboard/ManageScholarshi
 import UpdateScholarship from "./pages/Dashboard/AdminDashboard/UpdateScholarship";
 import ManageApplied from "./pages/Dashboard/AdminDashboard/ManageApplied";
 import AdminProfile from "./pages/Dashboard/AdminDashboard/AdminProfile";
-import ManageReview from "./pages/Dashboard/AdminDashboard/ManageReview";
 import Payment from "./pages/Dashboard/UserDashboard/Payment/Payment";
-import MyReviews from "./pages/Dashboard/UserDashboard/Myreviews";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import AnalyticsChart from "./pages/Dashboard/AdminDashboard/AnalyticsChart";
 
@@ -94,10 +92,6 @@ export const router = createBrowserRouter([
         element: <ManageUsers></ManageUsers>
       },
       {
-        path: 'manageReview',
-        element: <ManageReview></ManageReview>
-      },
-      {
         path: 'analytics',
         element: <AdminRoute><AnalyticsChart></AnalyticsChart></AdminRoute>
       },
@@ -109,10 +103,6 @@ export const router = createBrowserRouter([
       {
         path: 'myProfile',
         element: <PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>
-      },
-      {
-        path: 'myReview',
-        element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
       },
       {
         path: 'payment',

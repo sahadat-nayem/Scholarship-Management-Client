@@ -89,7 +89,7 @@ const AllScholarship = () => {
             key={index}
             onClick={() => handlePageChange(index + 1)}
             className={`btn mx-1 ${
-              currentPage === index + 1 ? "btn-warning" : "btn-outline"
+              currentPage === index + 1 ? "btn glass bg-black text-white" : "btn-outline"
             }`}
           >
             {index + 1}

@@ -33,7 +33,7 @@ const AllScholarshipCart = ({ category }) => {
           <div className="card-actions">
             <Link
                to={`/scholarshipDetails/${_id}`}
-              className="btn btn-outline text-[#BB8506] bg-gray-200 border border-b-2 w-full"
+              className="btn btn-outline glass bg-black text-white border border-b-2 w-full"
             >
               Details
             </Link>

@@ -1,5 +1,4 @@
 import { FaHome, FaSearch, FaUser } from "react-icons/fa";
-import { MdRateReview, MdReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import { FaBook, FaFileLines, FaList, FaUsers } from "react-icons/fa6";
@@ -49,12 +48,6 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageReview">
-                <MdRateReview />
-                  Manage Review
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/dashboard/analytics">
                 <IoMdAnalytics />
                 Analytics Dashboard
@@ -73,12 +66,6 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/myApplication">
                 <FaFileLines />
                 My Application
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/myReview">
-                <MdReviews />
-                  My reviews
                 </NavLink>
               </li>
             </>
