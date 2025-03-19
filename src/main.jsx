@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/scholarship/new')
+        loader: () => fetch('https://assignment-12-server-phi-opal.vercel.app/scholarship/new')
       },
       {
         path: "AllScholarship",
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         path: "scholarshipDetails/:id",
         element: <PrivateRoutes><ScholarshipDetails></ScholarshipDetails></PrivateRoutes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/scholarship/details/${params.id}`),
+          fetch(`https://assignment-12-server-phi-opal.vercel.app/scholarship/details/${params.id}`),
       },
       {
         path: "login",
@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateScholarship/:id',
         element: <AdminRoute><UpdateScholarship></UpdateScholarship></AdminRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/scholarship/update/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-12-server-phi-opal.vercel.app/scholarship/update/${params.id}`)
       },
       {
         path: 'manageScholarship',

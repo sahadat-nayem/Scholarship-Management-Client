@@ -1,11 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import Banner from "./Banner";
 import CollegeSlider from "./CollegeSlider";
 import Marquees from "./Marquees";
 import Organizations from "./Organizations";
 import Overview from "./Overview";
 import ScholarshipManagement from "./ScholarshipManagement";
 import TopScholarship from "./TopScholarship";
+import Banner from "./Banner/Banner";
 
 
 const Home = () => {

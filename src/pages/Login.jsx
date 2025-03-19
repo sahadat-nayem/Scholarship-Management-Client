@@ -90,7 +90,7 @@ const Login = () => {
                     </label>
                     </div>
                     <div className="form-control mt-6 gap-3">
-                    <button className="btn btn-info rounded-none">Login</button>
+                    <button className="btn btn-outline glass bg-black text-white rounded-md">Login</button>
                     <SocialLogin></SocialLogin>
                     </div>
                 </form>

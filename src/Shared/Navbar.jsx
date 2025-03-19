@@ -23,11 +23,11 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-black hover:text-white hover:scale-110" to="/">
+      <NavLink className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-indigo-500 hover:text-white hover:scale-110" to="/">
       <FaHome className="size-4" /> Home
       </NavLink>
       <NavLink
-        className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-black hover:text-white hover:scale-110"
+        className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-indigo-500 hover:text-white hover:scale-110"
         to="/AllScholarship"
       >
         <FaGoogleScholar className="size-4" /> All Scholarship
@@ -35,7 +35,7 @@ const Navbar = () => {
       {isAdmin ? (
         <>
           <NavLink
-            className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-black hover:text-white hover:scale-110"
+            className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-indigo-500 hover:text-white hover:scale-110"
             to="/dashboard/addScholarship"
           >
             <RiAdminFill className="size-4" /> Admin Dashboard
@@ -44,7 +44,7 @@ const Navbar = () => {
       ) : (
         <>
           <NavLink
-            className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-black hover:text-white hover:scale-110"
+            className="font-semibold cursor-pointer flex gap-1 transition-all duration-300 text-indigo-500 hover:text-white hover:scale-110"
             to="/dashboard/myApplication"
           >
             <FaUser className="size-4" /> User Dashboard
@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-black text-black bg-opacity-30 fixed w-full z-[100]">
+      <div className="navbar bg-black text-indigo-500 bg-opacity-30 fixed w-full z-[100]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +77,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-white text-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white text-indigo-500 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
@@ -95,12 +95,12 @@ const Navbar = () => {
           <div className="">
             {user && user?.email ? (
               <div className="group relative">
-                <img
+                <Link to="/dashboard/adminProfile"><img
                   className="size-12 rounded-full border-2 border-blue-900 transition-all duration-300"
                   src={user?.photoURL}
                   alt=""
-                />
-                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded text-black font-bold text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20">
+                /></Link>
+                <span className="absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded text-indigo-500 font-bold text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-20">
                   {user?.displayName}
                 </span>
               </div>

@@ -162,16 +162,16 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6 gap-3">
                 <input
-                  className="btn text-white bg-[#D1A054]"
+                  className="btn btn-outline glass bg-black text-white"
                   type="submit"
                   value="Sign Up"
                 />
                 <SocialLogin></SocialLogin>
               </div>
-              <p className="text-[#D1A054] text-center font-semibold">
+              <p className="text-black text-center font-semibold">
                 <small>
                   Already registered?{" "}
-                  <Link className="font-bold" to="/login">
+                  <Link className="font-bold text-red-500" to="/login">
                     Go to log in
                   </Link>
                 </small>

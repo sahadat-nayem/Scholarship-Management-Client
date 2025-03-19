@@ -4,6 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MdFeedback } from "react-icons/md";
 import { BiSolidMessageAltDetail } from "react-icons/bi";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ManageApplied = () => {
   const [apply, setApply] = useState([]);
@@ -104,9 +105,12 @@ const ManageApplied = () => {
                   <td className="text-right">${item.applicationFees}</td>
                   <td className="text-right">{item.email}</td>
                   <td>
-                    <button className="btn btn-ghost btn-md bg-[#9edabe]">
+                    <Link
+                      to={`/scholarshipDetails/${item._id}`}
+                      className="btn btn-ghost btn-md bg-[#9edabe]"
+                    >
                       <BiSolidMessageAltDetail className="text-black"></BiSolidMessageAltDetail>
-                    </button>
+                    </Link>
                   </td>
                   <td>
                     <button className="btn btn-ghost btn-md bg-[#9edabe]">
