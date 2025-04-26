@@ -14,7 +14,7 @@ const AllScholarshipCart = ({ category }) => {
   } = category;
 
   return (
-      <div className="card bg-base-100 w-96 shadow-xl mb-5">
+      <div className="card bg-base-100 w-96 shadow-xl mb-5 mx-auto">
         <figure className="px-10 pt-10">
           <img
             src={universityImage}

@@ -18,7 +18,7 @@ const TopScholarship = ({ category }) => {
 
 
   return (
-    <div className="card bg-base-100 w-96 border rounded-md hover:rounded-xl border-black hover:shadow-2xl mb-5" data-aos="fade-right">
+    <div className="card bg-base-100 w-96 border rounded-md hover:rounded-xl border-black hover:shadow-2xl mb-5 mx-auto" data-aos="fade-right">
       <figure className="px-10 pt-10">
         <img
           src={universityImage}

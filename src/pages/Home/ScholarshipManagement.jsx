@@ -22,7 +22,7 @@ const ScholarshipManagement = () => {
       </div>
       <div className="max-w-screen-lg">
         <iframe
-        className="md:w-[560px] w-[360px]"
+        className="md:w-[560px] w-[360px] mt-3 pr-8 md:pr-1"
           height="315"
           src="https://www.youtube.com/embed/7wbOGDVtJ7o?si=u1oVKqP1qCXVY13i"
           title="YouTube video player"
